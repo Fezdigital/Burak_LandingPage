@@ -105,7 +105,7 @@ export class UserComponent {
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4 relative z-50">Dependency Injection</h3>
                 <p className="text-white/70 leading-relaxed relative z-50 mb-4">
-                  Angular's powerful dependency injection system makes it easy to manage dependencies, 
+                  Angular&apos;s powerful dependency injection system makes it easy to manage dependencies, 
                   create testable code, and build modular, maintainable applications.
                 </p>
                 <div className="bg-gray-900/50 rounded-lg p-4 relative z-50">
@@ -170,7 +170,7 @@ ng build --prod`}
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4 relative z-50">Component Architecture</h3>
                 <p className="text-white/70 leading-relaxed relative z-50 mb-4">
-                  Angular's component-based architecture provides a structured way to build applications 
+                  Angular&apos;s component-based architecture provides a structured way to build applications 
                   with reusable, self-contained components that encapsulate logic and presentation.
                 </p>
                 <div className="bg-gray-900/50 rounded-lg p-4 relative z-50">

@@ -40,7 +40,7 @@ export default function NodeJSPage() {
               Node.js
             </h1>
             <p className="text-lg sm:text-xl text-white/60 max-w-4xl mx-auto leading-relaxed px-4 mb-8">
-              A JavaScript runtime built on Chrome's V8 engine for building fast and scalable server-side applications. 
+              A JavaScript runtime built on Chrome&apos;s V8 engine for building fast and scalable server-side applications. 
               Node.js enables JavaScript to run outside the browser, making it a powerful tool for backend development.
             </p>
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
@@ -129,7 +129,7 @@ console.log('Reading file...');`}
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4 relative z-50">NPM Ecosystem</h3>
                 <p className="text-white/70 leading-relaxed relative z-50 mb-4">
-                  Node.js comes with npm (Node Package Manager), the world's largest software registry, 
+                  Node.js comes with npm (Node Package Manager), the world&apos;s largest software registry, 
                   providing access to millions of reusable packages and tools.
                 </p>
                 <div className="bg-gray-900/50 rounded-lg p-4 relative z-50">

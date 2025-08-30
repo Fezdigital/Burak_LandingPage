@@ -122,7 +122,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 sm:mb-4 relative z-50">Node.js</h3>
                   <p className="text-sm sm:text-base text-white/70 mb-4 sm:mb-6 leading-relaxed relative z-50">
-                    A JavaScript runtime built on Chrome's V8 engine for building fast and scalable server-side applications.
+                    A JavaScript runtime built on Chrome&apos;s V8 engine for building fast and scalable server-side applications.
                   </p>
                   <div className="flex flex-wrap gap-1 sm:gap-2 relative z-50">
                     <span className="px-2 sm:px-3 py-1 bg-green-600/20 text-green-300 text-xs sm:text-sm rounded-full border border-green-600/30">Event-driven</span>
@@ -259,7 +259,7 @@ export default function Home() {
                   <div className="flex-grow text-center sm:text-left">
                     <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4 relative z-50">Large Community</h3>
                     <p className="text-base sm:text-lg text-white/70 leading-relaxed relative z-50">
-                      JavaScript frameworks benefit from thriving global communities with millions of active developers contributing to extensive ecosystems of libraries, plugins, and tools. These communities provide invaluable resources including comprehensive tutorials, video courses, interactive learning platforms, and real-world project examples. You'll find active support through forums, Discord servers, Stack Overflow, and GitHub discussions, along with regular conferences, meetups, and workshops that foster knowledge sharing and professional networking opportunities.
+                      JavaScript frameworks benefit from thriving global communities with millions of active developers contributing to extensive ecosystems of libraries, plugins, and tools. These communities provide invaluable resources including comprehensive tutorials, video courses, interactive learning platforms, and real-world project examples. You&apos;ll find active support through forums, Discord servers, Stack Overflow, and GitHub discussions, along with regular conferences, meetups, and workshops that foster knowledge sharing and professional networking opportunities.
                     </p>
                   </div>
                   <Meteors number={8} />

@@ -90,7 +90,7 @@ export const ContactForm: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Get In Touch</h2>
           <p className="text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
             Have questions about JavaScript frameworks or need help choosing the right one for your project? 
-            We'd love to hear from you!
+            We&apos;d love to hear from you!
           </p>
         </div>
 
@@ -190,7 +190,7 @@ export const ContactForm: React.FC = () => {
           {submitStatus === 'success' && (
             <div className="text-center p-4 bg-green-500/20 border border-green-500/30 rounded-lg">
               <p className="text-green-300 font-medium">
-                ✅ Message sent successfully! We'll get back to you soon.
+                ✅ Message sent successfully! We&apos;ll get back to you soon.
               </p>
             </div>
           )}

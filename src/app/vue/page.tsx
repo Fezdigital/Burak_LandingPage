@@ -94,7 +94,7 @@ export default function VuePage() {
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4 relative z-50">Reactive Data Binding</h3>
                 <p className="text-white/70 leading-relaxed relative z-50 mb-4">
-                  Vue's reactivity system automatically tracks dependencies and updates the DOM when data changes. 
+                  Vue&apos;s reactivity system automatically tracks dependencies and updates the DOM when data changes. 
                   This makes it easy to build dynamic, responsive user interfaces.
                 </p>
                 <div className="bg-gray-900/50 rounded-lg p-4 relative z-50">
@@ -126,7 +126,7 @@ data() {
                 <h3 className="text-xl font-bold text-white mb-4 relative z-50">Template Syntax</h3>
                 <p className="text-white/70 leading-relaxed relative z-50 mb-4">
                   Vue uses an HTML-based template syntax that allows you to declaratively bind the rendered DOM 
-                  to the underlying component instance's data.
+                  to the underlying component instance&apos;s data.
                 </p>
                 <div className="bg-gray-900/50 rounded-lg p-4 relative z-50">
                   <code className="text-green-300 text-sm">

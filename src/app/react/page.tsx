@@ -90,7 +90,7 @@ export default function ReactPage() {
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4 relative z-50">Virtual DOM</h3>
                 <p className="text-white/70 leading-relaxed relative z-50 mb-4">
-                  React uses a Virtual DOM to optimize rendering performance. Instead of directly manipulating the browser's DOM, 
+                  React uses a Virtual DOM to optimize rendering performance. Instead of directly manipulating the browser&apos;s DOM, 
                   React creates a lightweight copy and efficiently updates only the necessary parts.
                 </p>
                 <div className="bg-gray-900/50 rounded-lg p-4 relative z-50">
