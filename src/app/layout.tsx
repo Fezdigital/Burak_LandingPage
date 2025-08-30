@@ -24,6 +24,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Preload framework pages for faster navigation */}
+        <link rel="prefetch" href="/react" />
+        <link rel="prefetch" href="/vue" />
+        <link rel="prefetch" href="/angular" />
+        <link rel="prefetch" href="/nodejs" />
+        <link rel="prefetch" href="/express" />
+        <link rel="prefetch" href="/nextjs" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
