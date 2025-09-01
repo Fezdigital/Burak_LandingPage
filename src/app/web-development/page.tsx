@@ -97,7 +97,7 @@ export default function WebDevelopmentPage() {
                       </div>
                       <h4 className="text-white font-semibold mb-2">Junior Web Developer</h4>
                       <p className="text-white/70 text-sm">
-                        After taking basic web development courses during my university education, I followed various online courses and practiced to improve my skills. I started with HTML, CSS, and Javascript, and now I'm continuing my journey using React, Next.js, Typescript, and Tailwind CSS.
+                        After taking basic web development courses during my university education, I followed various online courses and practiced to improve my skills. I started with HTML, CSS, and Javascript, and now I&apos;m continuing my journey using React, Next.js, Typescript, and Tailwind CSS.
                       </p>
                     </div>
                   </div>
@@ -171,7 +171,7 @@ export default function WebDevelopmentPage() {
                   Ready to Work Together?
                 </h3>
                 <p className="text-white/70 mb-6 relative z-50">
-                  Let's discuss your web development project and bring your ideas to life.
+                  Let&apos;s discuss your web development project and bring your ideas to life.
                 </p>
                 <button 
                   onClick={() => setShowContactForm(true)}

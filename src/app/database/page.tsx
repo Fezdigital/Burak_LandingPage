@@ -163,7 +163,7 @@ export default function DatabasePage() {
                   Need Database Solutions?
                 </h3>
                 <p className="text-white/70 mb-6 relative z-50">
-                  Let's discuss your database requirements and create efficient, scalable data solutions.
+                  Let&apos;s discuss your database requirements and create efficient, scalable data solutions.
                 </p>
                 <button 
                   onClick={() => setShowContactForm(true)}

@@ -236,7 +236,7 @@ export default function AndroidDevelopmentPage() {
                   Need an Android App?
                 </h3>
                 <p className="text-white/70 mb-6 relative z-50">
-                  Let's discuss your mobile app idea and create something amazing for Android users.
+                  Let&apos;s discuss your mobile app idea and create something amazing for Android users.
                 </p>
                                  <button 
                    onClick={() => setShowContactForm(true)}

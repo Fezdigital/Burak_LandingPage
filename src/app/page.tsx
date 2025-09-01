@@ -22,7 +22,7 @@ export default function Home() {
               About Me
             </h2>
             <p className="text-lg sm:text-xl text-white/60 max-w-3xl mx-auto leading-relaxed px-4">
-              Welcome to my personal website! I'm a passionate software developer with expertise in modern web and mobile technologies,
+              Welcome to my personal website! I&apos;m a passionate software developer with expertise in modern web and mobile technologies,
               creating innovative solutions and building exceptional digital experiences.
             </p>
           </div>
@@ -135,7 +135,7 @@ export default function Home() {
                   <div className="flex-grow text-center sm:text-left">
                     <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4 relative z-50">Innovation & Problem Solving</h3>
                     <p className="text-base sm:text-lg text-white/70 leading-relaxed relative z-50">
-                      I approach every challenge with creativity and analytical thinking, transforming complex problems into elegant solutions. My passion for innovation drives me to explore new technologies and methodologies, ensuring that every project I work on benefits from cutting-edge approaches. I believe in writing clean, maintainable code that not only solves today's problems but scales for tomorrow's challenges.
+                      I approach every challenge with creativity and analytical thinking, transforming complex problems into elegant solutions. My passion for innovation drives me to explore new technologies and methodologies, ensuring that every project I work on benefits from cutting-edge approaches. I believe in writing clean, maintainable code that not only solves today&apos;s problems but scales for tomorrow&apos;s challenges.
                     </p>
                   </div>
                   <Meteors number={12} />
