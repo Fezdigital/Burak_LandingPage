@@ -11,7 +11,7 @@ interface FormData {
   message: string;
 }
 
-export const ContactForm: React.FC = () => {
+export const ContactForm: React.FC<{ hideDescription?: boolean }> = ({ hideDescription = false }) => {
   const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -88,10 +88,12 @@ export const ContactForm: React.FC = () => {
       <div className="relative bg-black/60 backdrop-blur-sm border border-gray-800 p-8 lg:p-12 overflow-hidden rounded-2xl">
         <div className="text-center mb-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Get In Touch</h2>
-          <p className="text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
-            Have questions about JavaScript frameworks or need help choosing the right one for your project? 
-            We&apos;d love to hear from you!
-          </p>
+          {!hideDescription && (
+            <p className="text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
+              Interested in collaborating on a project or have questions about my work? 
+              I&apos;d love to hear from you!
+            </p>
+          )}
         </div>
 
         <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 max-w-2xl mx-auto">
@@ -161,7 +163,7 @@ export const ContactForm: React.FC = () => {
               required
               rows={6}
               className="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-lg text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
-              placeholder="Tell us more about your question or project..."
+              placeholder="Tell me more about your project or question..."
             />
           </div>
 
@@ -190,7 +192,7 @@ export const ContactForm: React.FC = () => {
           {submitStatus === 'success' && (
             <div className="text-center p-4 bg-green-500/20 border border-green-500/30 rounded-lg">
               <p className="text-green-300 font-medium">
-                ✅ Message sent successfully! We&apos;ll get back to you soon.
+                ✅ Message sent successfully! I&apos;ll get back to you soon.
               </p>
             </div>
           )}
@@ -198,7 +200,7 @@ export const ContactForm: React.FC = () => {
           {submitStatus === 'error' && (
             <div className="text-center p-4 bg-red-500/20 border border-red-500/30 rounded-lg">
               <p className="text-red-300 font-medium">
-                ❌ Failed to send message. Please try again or contact us directly.
+                ❌ Failed to send message. Please try again or contact me directly.
               </p>
             </div>
           )}
