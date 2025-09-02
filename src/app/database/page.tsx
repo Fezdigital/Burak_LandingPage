@@ -3,6 +3,8 @@
 import { Meteors } from "@/components/ui/meteors";
 import { ContactForm } from "@/components/ui/contact-form";
 import { ShootingStars } from "@/components/ui/shooting-stars";
+import { ProjectsGrid } from "@/components/ui/projects-grid";
+import { ProjectCategory } from "@/types/project";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -129,29 +131,16 @@ export default function DatabasePage() {
             </div>
           </div>
 
-          {/* Projects Section - Placeholder */}
+          {/* Projects Section */}
           <div className="mb-16 sm:mb-24">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8 sm:mb-12 text-center">
-            Projects
+              Database Projects
             </h2>
             
-            <div className="relative overflow-hidden rounded-xl sm:rounded-2xl shadow-2xl max-w-4xl mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-purple-600/20 transform scale-[0.80] rounded-xl sm:rounded-2xl blur-3xl" />
-              <div className="relative bg-black/60 backdrop-blur-sm border border-gray-800 p-8 sm:p-12 text-center overflow-hidden rounded-xl sm:rounded-2xl">
-                <div className="w-16 h-16 bg-purple-500/20 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 relative z-50">
-                  Projects Coming Soon
-                </h3>
-                <p className="text-white/70 text-lg relative z-50 max-w-2xl mx-auto">
-                  This section will showcase my database projects. Projects will be dynamically loaded from the database.
-                </p>
-                <Meteors number={12} />
-              </div>
-            </div>
+            <ProjectsGrid 
+              category={ProjectCategory.DATABASE}
+              limit={6}
+            />
           </div>
 
           {/* Call to Action */}
