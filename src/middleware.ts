@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { verifyToken } from '@/lib/auth';
 
 export function middleware(request: NextRequest) {
   // Only protect admin routes
@@ -11,15 +10,10 @@ export function middleware(request: NextRequest) {
     }
 
     const token = request.cookies.get('admin-token')?.value;
-
     if (!token) {
       return NextResponse.redirect(new URL('/admin/login', request.url));
     }
-
-    const user = verifyToken(token);
-    if (!user || !user.isAdmin) {
-      return NextResponse.redirect(new URL('/admin/login', request.url));
-    }
+    // Do not verify JWT in Edge (middleware). Just check presence and let Node routes verify.
   }
 
   return NextResponse.next();

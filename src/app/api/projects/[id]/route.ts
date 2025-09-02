@@ -2,14 +2,17 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { getAuthenticatedUser } from '@/lib/auth';
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export const runtime = 'nodejs';
+
+export async function GET(request: NextRequest) {
   try {
+    const url = new URL(request.url);
+    const segments = url.pathname.split('/').filter(Boolean);
+    const id = segments[segments.length - 1];
+
     const project = await prisma.project.findUnique({
       where: {
-        id: params.id,
+        id,
       },
     });
 
@@ -30,21 +33,22 @@ export async function GET(
   }
 }
 
-export async function PUT(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function PUT(request: NextRequest) {
   try {
     const user = await getAuthenticatedUser();
     if (!user?.isAdmin) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
+    const url = new URL(request.url);
+    const segments = url.pathname.split('/').filter(Boolean);
+    const id = segments[segments.length - 1];
+
     const body = await request.json();
     
     const project = await prisma.project.update({
       where: {
-        id: params.id,
+        id,
       },
       data: {
         title: body.title,
@@ -69,19 +73,20 @@ export async function PUT(
   }
 }
 
-export async function DELETE(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function DELETE(request: NextRequest) {
   try {
     const user = await getAuthenticatedUser();
     if (!user?.isAdmin) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
+    const url = new URL(request.url);
+    const segments = url.pathname.split('/').filter(Boolean);
+    const id = segments[segments.length - 1];
+
     await prisma.project.delete({
       where: {
-        id: params.id,
+        id,
       },
     });
 

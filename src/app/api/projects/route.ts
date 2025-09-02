@@ -3,6 +3,8 @@ import { prisma } from '@/lib/db';
 import { ProjectCategory } from '@/generated/prisma';
 import { getAuthenticatedUser } from '@/lib/auth';
 
+export const runtime = 'nodejs';
+
 export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams;
