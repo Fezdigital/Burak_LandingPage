@@ -30,7 +30,7 @@ export function verifyToken(token: string): AdminUser | null {
 
 export async function getAuthenticatedUser(): Promise<AdminUser | null> {
   try {
-    const cookieStore = cookies();
+    const cookieStore = await cookies();
     const token = cookieStore.get('admin-token')?.value;
     
     if (!token) {
