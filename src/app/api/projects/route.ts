@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
-import { ProjectCategory } from '@/generated/prisma';
+import { Prisma, ProjectCategory } from '@/generated/prisma';
 import { getAuthenticatedUser } from '@/lib/auth';
 
 export const runtime = 'nodejs';
@@ -11,7 +11,7 @@ export async function GET(request: NextRequest) {
     const category = searchParams.get('category') as ProjectCategory | null;
     const featured = searchParams.get('featured');
 
-    const where: any = {};
+    const where: Prisma.ProjectWhereInput = {};
     
     if (category) {
       where.category = category;
