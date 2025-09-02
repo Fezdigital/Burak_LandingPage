@@ -1,14 +1,18 @@
 import { NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
 
 export const runtime = 'nodejs';
 
 export async function POST() {
   try {
-    const cookieStore = cookies();
-    cookieStore.delete('admin-token');
-
-    return NextResponse.json({ success: true });
+    const response = NextResponse.json({ success: true });
+    response.cookies.set('admin-token', '', {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      maxAge: 0,
+      path: '/',
+    });
+    return response;
   } catch (error) {
     console.error('Logout error:', error);
     return NextResponse.json(
