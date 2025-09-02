@@ -1,28 +1,26 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import { AdminSidebar } from '@/components/admin/AdminSidebar';
 import { ProjectForm } from '@/components/admin/ProjectForm';
 import { Project } from '@/types/project';
 
-interface EditProjectPageProps {
-  params: {
-    id: string;
-  };
-}
-
-export default function EditProjectPage({ params }: EditProjectPageProps) {
+export default function EditProjectPage() {
   const [user, setUser] = useState<{ username: string; isAdmin: boolean } | null>(null);
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const router = useRouter();
+  const params = useParams<{ id: string }>();
+  const id = Array.isArray(params?.id) ? params.id[0] : params?.id;
 
   useEffect(() => {
     checkAuth();
-    loadProject();
-  }, [params.id]);
+    if (id) {
+      loadProject(id);
+    }
+  }, [id]);
 
   const checkAuth = async () => {
     try {
@@ -38,9 +36,9 @@ export default function EditProjectPage({ params }: EditProjectPageProps) {
     }
   };
 
-  const loadProject = async () => {
+  const loadProject = async (projectId: string) => {
     try {
-      const response = await fetch(`/api/projects/${params.id}`);
+      const response = await fetch(`/api/projects/${projectId}`);
       if (response.ok) {
         const data = await response.json();
         setProject(data);
