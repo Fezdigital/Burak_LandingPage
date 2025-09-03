@@ -1,7 +1,6 @@
 'use client';
 
 import { Project } from '@/types/project';
-import { Meteors } from './meteors';
 import Link from 'next/link';
 
 interface ProjectCardProps {
@@ -30,10 +29,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {project.title}
           </h3>
 
-          {/* Project Description */}
-          <p className="text-sm sm:text-base text-white/70 mb-4 sm:mb-6 leading-relaxed relative z-50">
+          {/* Project Short Description */}
+          <p className="text-sm sm:text-base text-white/90 mb-2 sm:mb-3 leading-relaxed relative z-50 font-semibold">
             {project.description}
           </p>
+
+          {/* Project Detailed Description */}
+          {project.longDescription && (
+            <p className="text-sm sm:text-base text-white/70 mb-4 sm:mb-6 leading-relaxed relative z-50">
+              {project.longDescription}
+            </p>
+          )}
 
           {/* Technologies */}
           <div className="flex flex-wrap gap-1 sm:gap-2 relative z-50 mb-4 sm:mb-6">
@@ -65,7 +71,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
             )}
           </div>
         </div>
-        <Meteors number={12} />
       </div>
     </div>
   );
