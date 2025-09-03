@@ -40,8 +40,8 @@ export async function uploadImageToCloudinary(
     });
 
     return {
-      url: (result as any).secure_url,
-      public_id: (result as any).public_id,
+      url: (result as { secure_url: string; public_id: string }).secure_url,
+      public_id: (result as { secure_url: string; public_id: string }).public_id,
     };
   } catch (error) {
     console.error('Error uploading to Cloudinary:', error);

@@ -50,7 +50,7 @@ export function ProjectForm({ project, isEditing = false }: ProjectFormProps) {
         const data = await response.json();
         setError(data.error || 'Failed to save project');
       }
-    } catch (error) {
+    } catch (err) {
       setError('Network error. Please try again.');
     } finally {
       setLoading(false);
@@ -104,7 +104,7 @@ export function ProjectForm({ project, isEditing = false }: ProjectFormProps) {
         const errorData = await response.json();
         setError(errorData.error || 'Failed to upload image');
       }
-    } catch (error) {
+    } catch (err) {
       setError('Network error. Please try again.');
     } finally {
       setUploading(false);
