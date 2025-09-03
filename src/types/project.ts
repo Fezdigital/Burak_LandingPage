@@ -17,8 +17,6 @@ export enum ProjectCategory {
   WEB_DEVELOPMENT = 'WEB_DEVELOPMENT',
   ANDROID_DEVELOPMENT = 'ANDROID_DEVELOPMENT',
   DATABASE = 'DATABASE',
-  FULL_STACK = 'FULL_STACK',
-  OTHER = 'OTHER',
 }
 
 export interface CreateProjectData {
