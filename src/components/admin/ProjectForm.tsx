@@ -24,6 +24,7 @@ export function ProjectForm({ project, isEditing = false }: ProjectFormProps) {
   const [techInput, setTechInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [uploading, setUploading] = useState(false);
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -77,6 +78,36 @@ export function ProjectForm({ project, isEditing = false }: ProjectFormProps) {
     if (e.key === 'Enter') {
       e.preventDefault();
       addTechnology();
+    }
+  };
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploading(true);
+    setError('');
+
+    try {
+      const uploadFormData = new FormData();
+      uploadFormData.append('file', file);
+
+      const response = await fetch('/api/upload', {
+        method: 'POST',
+        body: uploadFormData,
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setFormData({ ...formData, imageUrl: data.url });
+      } else {
+        const errorData = await response.json();
+        setError(errorData.error || 'Failed to upload image');
+      }
+    } catch (error) {
+      setError('Network error. Please try again.');
+    } finally {
+      setUploading(false);
     }
   };
 
@@ -158,19 +189,51 @@ export function ProjectForm({ project, isEditing = false }: ProjectFormProps) {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Image URL */}
+        {/* Image Upload */}
         <div>
-          <label htmlFor="imageUrl" className="block text-sm font-medium text-white/80 mb-2">
-            Image URL
+          <label htmlFor="imageUpload" className="block text-sm font-medium text-white/80 mb-2">
+            Project Image
           </label>
-          <input
-            id="imageUrl"
-            type="url"
-            value={formData.imageUrl}
-            onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
-            className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            placeholder="https://example.com/image.jpg"
-          />
+          <div className="space-y-3">
+            <input
+              id="imageUpload"
+              type="file"
+              accept="image/*"
+              onChange={handleImageUpload}
+              disabled={uploading}
+              className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-500 file:text-white hover:file:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:opacity-50"
+            />
+            {uploading && (
+              <div className="flex items-center gap-2 text-blue-300 text-sm">
+                <div className="w-4 h-4 border-2 border-blue-300 border-t-transparent rounded-full animate-spin"></div>
+                Uploading image...
+              </div>
+            )}
+            {formData.imageUrl && (
+              <div className="mt-3">
+                <img
+                  src={formData.imageUrl}
+                  alt="Project preview"
+                  className="w-full h-32 object-cover rounded-lg border border-gray-600"
+                />
+                <p className="text-xs text-gray-400 mt-1">Current image</p>
+              </div>
+            )}
+            {/* Manual URL input as fallback */}
+            <div className="mt-3">
+              <label htmlFor="imageUrl" className="block text-xs font-medium text-white/60 mb-1">
+                Or paste image URL manually:
+              </label>
+              <input
+                id="imageUrl"
+                type="url"
+                value={formData.imageUrl}
+                onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
+                className="w-full px-3 py-2 bg-gray-800/30 border border-gray-600 rounded text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-sm"
+                placeholder="https://example.com/image.jpg"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Demo URL */}
