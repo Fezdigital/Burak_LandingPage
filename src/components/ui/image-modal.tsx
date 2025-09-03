@@ -32,10 +32,10 @@ export function ImageModal({ isOpen, onClose, imageUrl, imageAlt }: ImageModalPr
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm overflow-auto"
       onClick={onClose}
     >
-      <div className="relative max-w-[90vw] max-h-[90vh] p-4">
+      <div className="relative max-w-[70vw] max-h-[70vh] p-4 my-8">
         {/* Close button */}
         <button
           onClick={onClose}
