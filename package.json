@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "prisma generate && prisma db push && next build",
     "start": "next start",
     "lint": "eslint",
     "postinstall": "prisma generate",
-    "migrate:deploy": "prisma migrate deploy"
+    "migrate:deploy": "prisma migrate deploy",
+    "db:push": "prisma db push",
+    "db:generate": "prisma generate"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
