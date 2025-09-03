@@ -12,7 +12,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="relative overflow-hidden rounded-xl sm:rounded-2xl shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 group">
       <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-blue-600/20 transform scale-[0.80] rounded-xl sm:rounded-2xl blur-3xl" />
-      <div className="relative bg-black/60 backdrop-blur-sm border border-gray-800 p-4 sm:p-6 lg:p-8 h-full overflow-hidden rounded-xl sm:rounded-2xl flex flex-col justify-between">
+      <div className="relative bg-black/60 backdrop-blur-sm border border-gray-800 p-6 sm:p-8 lg:p-10 h-full overflow-hidden rounded-xl sm:rounded-2xl flex flex-col justify-between">
         <div>
           {/* Project Image */}
           {project.imageUrl && (
@@ -20,7 +20,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               <img
                 src={project.imageUrl}
                 alt={project.title}
-                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-64 sm:h-72 lg:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
           )}

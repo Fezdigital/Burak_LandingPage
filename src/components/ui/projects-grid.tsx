@@ -54,14 +54,14 @@ export function ProjectsGrid({ category, featured, limit }: ProjectsGridProps) {
 
   if (loading) {
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 max-w-7xl mx-auto">
         {Array.from({ length: limit || 6 }).map((_, index) => (
           <div
             key={index}
             className="relative overflow-hidden rounded-xl sm:rounded-2xl shadow-2xl"
           >
-            <div className="bg-black/60 backdrop-blur-sm border border-gray-800 p-4 sm:p-6 lg:p-8 h-96 animate-pulse">
-              <div className="w-full h-48 bg-gray-700 rounded-lg mb-4"></div>
+            <div className="bg-black/60 backdrop-blur-sm border border-gray-800 p-6 sm:p-8 lg:p-10 h-[500px] animate-pulse">
+              <div className="w-full h-64 sm:h-72 lg:h-80 bg-gray-700 rounded-lg mb-4"></div>
               <div className="h-6 bg-gray-700 rounded mb-3"></div>
               <div className="h-4 bg-gray-700 rounded mb-2"></div>
               <div className="h-4 bg-gray-700 rounded mb-4"></div>
@@ -107,7 +107,7 @@ export function ProjectsGrid({ category, featured, limit }: ProjectsGridProps) {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 max-w-7xl mx-auto">
       {projects.map((project) => (
         <ProjectCard key={project.id} project={project} />
       ))}
